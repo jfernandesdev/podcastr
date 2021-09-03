@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 
 import Image from 'next/image';
 import Head from 'next/head';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 import { api } from '../../services/api';
 import { usePlayer } from '../../contexts/PlayerContexts'
