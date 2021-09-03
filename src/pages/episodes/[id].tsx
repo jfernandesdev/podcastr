@@ -110,21 +110,20 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   })
 
   const episode = {
-    id: data.id,
-    title: data.title,
-    thumbnail: data.thumbnail,
-    members: data.members,
-    duration: Number(data.duration),
-    durationAsString: convertDurationToTimeString(Number(data.duration)),
-    description: data.description,
-    url: data.url,
-    publishedAt: format(parseISO(data.published_at), 'd MMM yy', { locale: ptBR })
-  };
+        id: data.id,
+        title: data.title,
+        members: data.members,
+        publishedAt: format(parseISO(data.published_at), 'd MMM yy', { locale: ptBR }),
+        thumbnail: data.thumbnail,
+        description: data.description,
+        url: data.url,
+        type: data.type,
+        duration: data.duration,
+        durationAsString: convertDurationToTimeString(Number(data.duration)),
+    }
 
-  return {
-    props: {
-      episode,
-    },
-    revalidate: 60 * 60 * 24 // 24 hours
-  }
+    return {
+        props: { episode },
+        revalidate: 60 * 60 * 24 // - 24h
+    }
 }
