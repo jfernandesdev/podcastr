@@ -1,6 +1,6 @@
 import format from 'date-fns/format'
 import ptBR from 'date-fns/locale/pt-BR'
-import Link from 'next/Link'
+import Link from 'next/link'
 
 import styles from './styles.module.scss'
 
