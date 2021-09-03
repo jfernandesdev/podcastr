@@ -7,6 +7,8 @@ import { format, parseISO } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString'
 
+import { usePlayer } from '../contexts/PlayerContexts'
+
 import { api } from '../services/api'
 import styles from './home.module.scss'
 
@@ -27,7 +29,8 @@ type HomeProps = {
 }
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
-
+  const { playList } = usePlayer();
+  const episodeList = [...latestEpisodes, ...allEpisodes];
   return (
     <div className={styles.homepage}>
 
@@ -58,7 +61,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                     <span>{episode.durationAsString}</span>
                   </div>
 
-                  <button type="button">
+                  <button type="button" onClick={() => playList(episodeList, index)}>
                     <img src="/play-green.svg" alt="Tocar episódio" />
                   </button>
                 </li>
@@ -105,7 +108,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                     <td style={{ width: 100 }}>{episode.publishedAt}</td>
                     <td>{episode.durationAsString}</td>
                     <td>
-                      <button type="button">
+                      <button type="button" onClick={() => playList(episodeList, index + latestEpisodes.length)}>
                         <img src="/play-green.svg" alt="Tocar episódio" />
                       </button>
                     </td>

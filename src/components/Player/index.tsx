@@ -1,3 +1,9 @@
+import { useRef, useEffect, useState } from 'react'
+
+import Image from 'next/image'
+import Slider from 'rc-slider'
+
+
 import styles from './styles.module.scss'
 
 export function Player() {
