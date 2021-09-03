@@ -1,4 +1,4 @@
-# Podcastr <img src='https://github.com/jfernandesdev/podcastr/blob/f0f7f108ab98490c104a41bc5913eb58f1d61551/public/favicon.png' width='27px' />
+# Podcastr <img src='https://github.com/jfernandesdev/podcastr/blob/071322afd6f9a994d638c4355840fb69d99e9ba3/public/favicon.png' width='27px' />
 Projeto Web desenvolvido durante o NLW#05 com a Rocketseat by Diego Fernandes. TEMA: Podcastr: "O melhor para você ouvir, sempre".
 
 ### Funcionalidades:
@@ -26,7 +26,7 @@ Projeto Web desenvolvido durante o NLW#05 com a Rocketseat by Diego Fernandes. T
 
 Home                        |  Tocando um episódio      | Página do episódio
 :-------------------------:|:-------------------------: |:-------------------------:
-![](https://github.com/jfernandesdev/podcastr/blob/f0f7f108ab98490c104a41bc5913eb58f1d61551/public/home-without-podcast.png)  |  ![](https://github.com/jfernandesdev/podcastr/blob/f0f7f108ab98490c104a41bc5913eb58f1d61551/public/home-with-podcast.png) | ![img](https://github.com/jfernandesdev/podcastr/blob/f0f7f108ab98490c104a41bc5913eb58f1d61551/public/podcast-information.png) 
+![](https://github.com/jfernandesdev/podcastr/blob/071322afd6f9a994d638c4355840fb69d99e9ba3/public/home-without-podcast.png)  |  ![](https://github.com/jfernandesdev/podcastr/blob/071322afd6f9a994d638c4355840fb69d99e9ba3/public/home-with-podcast.png) | ![img](https://github.com/jfernandesdev/podcastr/blob/071322afd6f9a994d638c4355840fb69d99e9ba3/public/podcast-information.png) 
 
 
 ### Mobile screenshot:
