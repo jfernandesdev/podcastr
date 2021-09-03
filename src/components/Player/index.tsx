@@ -2,11 +2,21 @@ import { useRef, useEffect, useState } from 'react'
 
 import Image from 'next/image'
 import Slider from 'rc-slider'
+import 'rc-slider/assets/index.css'
 
+import { usePlayer } from '../../contexts/PlayerContexts'
+import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString'
 
 import styles from './styles.module.scss'
 
 export function Player() {
+  const {
+    episodeList,
+    currentEpisodeIndex,
+  } = usePlayer();
+
+  const episode = episodeList[currentEpisodeIndex]
+
   return (
     <div className={styles.playerContainer}>
       <header>
@@ -14,9 +24,25 @@ export function Player() {
         <strong>Tocando agora!</strong>
       </header>
 
-      <div className={styles.emptyPlayer}>
-        <strong>Selecione um podcast para ouvir</strong>
-      </div>
+      {
+        episode ? (
+          <div className={styles.currentEpisode}>
+            <Image
+              width={592}
+              height={592}
+              src={episode.thumbnail}
+              alt={episode.title}
+              objectFit="cover"
+            />
+            <strong>{episode.title}</strong>
+            <span>{episode.members}</span>
+          </div>
+        ) : (
+          <div className={styles.emptyPlayer}>
+            <strong>Selecione um podcast para ouvir</strong>
+          </div>
+        )
+      }
 
       <footer className={styles.empty}>
 
