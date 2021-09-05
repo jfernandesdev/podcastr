@@ -35,8 +35,8 @@ Em breve...
 
 ### Dê uma olhada como o projeto ficou! 👀
 
-Em breve ...
+https://podcastr-jfernandesdev.vercel.app/
 
 <br>
 
-<img src="https://lh3.googleusercontent.com/W2NiM7sAy899f5dpfxQ_xwut9YGQS6Nd4fCZ31FX5cAfJenSYdLBpLvtN9_-sue_wHkNKB_OzQ42KRG66Y5G=w1366-h625-rw" width='300px'>
+<img src="https://i.ibb.co/n1SbQZw/w-signature.png" alt="w-signature" border="0" width='300px' />
