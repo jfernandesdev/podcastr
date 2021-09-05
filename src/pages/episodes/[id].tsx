@@ -1,30 +1,30 @@
+import { parseISO, format } from 'date-fns';
+
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { api } from '../../services/api';
+import { usePlayer } from '../../contexts/PlayerContexts';
+
+import ptBR from 'date-fns/locale/pt-BR';
+import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
 import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
-
-import { api } from '../../services/api';
-import { usePlayer } from '../../contexts/PlayerContexts'
-
-import { format, parseISO } from 'date-fns';
-import ptBR from 'date-fns/locale/pt-BR';
-
-import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
 import styles from './episode.module.scss';
 
 type Episodes = {
   id: string,
   title: string,
-  thumbnail: string,
   members: string,
-  duration: number,
-  durationAsString: string,
-  url: string,
   publishedAt: string,
-  description: string
-};
+  thumbnail: string,
+  description: string,
+  url: string,
+  type: string,
+  duration: number,
+  durationAsString: string
+}
 
 type EpisodesProps = {
   episode: Episodes
@@ -41,7 +41,7 @@ export default function Episodes({ episode }: EpisodesProps) {
         </Head>
 
         <div className={styles.thumbnailContainer}>
-          <Link href='/'>
+          <Link href={'/'}>
             <button type="button">
               <img src="/arrow-left.svg" alt="Voltar" />
             </button>
@@ -76,7 +76,7 @@ export default function Episodes({ episode }: EpisodesProps) {
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async (ctx) => {
   const { data } = await api.get('episodes', {
     params: {
       _limit: 2,
@@ -85,12 +85,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
   })
 
-  const paths = data.map(episode => {
-    return {
-      params: {
-        id: episode.id
-      }
-    }
+  const paths = data.map((episode: { id: string }) => {
+    return { params: { id: episode.id } }
   })
 
   return {
@@ -109,20 +105,20 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   })
 
   const episode = {
-        id: data.id,
-        title: data.title,
-        members: data.members,
-        publishedAt: format(parseISO(data.published_at), 'd MMM yy', { locale: ptBR }),
-        thumbnail: data.thumbnail,
-        description: data.description,
-        url: data.url,
-        type: data.type,
-        duration: data.duration,
-        durationAsString: convertDurationToTimeString(Number(data.duration)),
-    }
+    id: data.id,
+    title: data.title,
+    members: data.members,
+    thumbnail: data.thumbnail,
+    description: data.description,
+    url: data.url,
+    type: data.type,
+    duration: data.duration,
+    durationAsString: convertDurationToTimeString(Number(data.duration)),
+    publishedAt: format(parseISO(data.published_at), 'd MMM yy', { locale: ptBR })
+  }
 
-    return {
-        props: { episode },
-        revalidate: 60 * 60 * 24 // - 24h
-    }
+  return {
+    props: { episode },
+    revalidate: 60 * 60 * 24 // - 24h
+  }
 }
