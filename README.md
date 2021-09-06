@@ -21,7 +21,7 @@ Projeto Web desenvolvido durante o NLW#05 com a Rocketseat by Diego Fernandes. T
 
 ## Layout 🤩
 
-### Desktop screenshot:
+### Desktop screenshot (por Tiago Luchtenberg):
 
 
 Home                        |  Tocando um episódio      | Página do episódio
