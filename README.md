@@ -17,11 +17,10 @@ Projeto Web desenvolvido durante o NLW#05 com a Rocketseat by Diego Fernandes. T
 - NextJs | 11.1.2
 - Typescript | ^4.4.2
 - NodeJs | 12.18.4
-- Axios | ^0.21.1
 
-## Layout 🤩
+## Layout (by Tiago Luchtenberg) 🤩
 
-### Desktop (por Tiago Luchtenberg):
+### Desktop:
 
 
 Home                        |  Tocando um episódio      | Página do episódio
