@@ -1,7 +1,7 @@
 # Podcastr <img src='https://github.com/jfernandesdev/podcastr/blob/071322afd6f9a994d638c4355840fb69d99e9ba3/public/favicon.png' width='27px' />
 Projeto Web desenvolvido durante o NLW#05 com a Rocketseat by Diego Fernandes. TEMA: Podcastr: "O melhor para você ouvir, sempre".
 
-### Funcionalidades:
+### Descrição:
 
 - [x] Listar episódios (últimos episódios e todos episódios);
 - [x] Ver detalhes do episódio: foto, título, membros, data de postagem, duração e descrição;
