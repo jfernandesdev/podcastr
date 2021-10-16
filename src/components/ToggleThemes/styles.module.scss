@@ -1,0 +1,70 @@
+.containerSwitch {
+  margin-right: 15px;
+}
+
+.switch {
+  visibility: hidden;
+  position: absolute;
+
+  + {
+    label {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+      padding: 2px;
+      width: 35px;
+      height: 18px;
+      background-color: #dddddd;
+      border-radius: 60px;
+      transition: background 0.4s;
+      &:before {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        content: "";
+        top: 2px;
+        left: 2px;
+        bottom: 2px;
+        right: 2px;
+        background-color: transparent;
+        border-radius: 60px;
+        transition: background 0.4s;
+      }
+      &:after {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        content: "";
+        top: 2px;
+        left: 2px;
+        bottom: 4px;
+        width: 10px;
+        border-radius: 52px;
+        transition: margin 0.4s, background 0.4s;
+        content: "🌞";
+        font-size: 11px;
+      }
+    }
+  }
+  &:checked {
+    + {
+      label {
+        background: linear-gradient(
+          15deg,
+          rgba(145, 100, 250, 0.8) 0%,
+          rgba(255, 205, 72, 0.2) 100%
+        );
+        &:after {
+          margin-left: calc(100% - 18px);
+          top: 2px;
+          left: 0px;
+          content: "🌜";
+          transform: rotate(-15deg);
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

@@ -3,8 +3,15 @@
   height: 6.5rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 2rem 4rem;
   border-bottom: 1px solid var(--gray-100);
+
+  > div {
+    justify-content: start;
+    display: flex;
+    align-items: center;
+  }
 
   p {
     margin-left: 2rem;

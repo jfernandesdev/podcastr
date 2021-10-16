@@ -72,7 +72,7 @@
               width: 4px;
               height: 4px;
               border-radius: 2px;
-              background-color: #DDD;
+              background-color: #ddd;
               position: absolute;
               left: 0;
               top: 50%;
@@ -104,7 +104,16 @@
         }
       }
     }
-  }  
+  }
+}
+
+[data-theme="dark"] .latestEpisodes {
+  ul {
+    li {
+      background-color: #4e3881;
+      border: 0;
+    }
+  }
 }
 
 .allEpisodes {
@@ -113,7 +122,8 @@
   table {
     width: 100%;
 
-    th, td {
+    th,
+    td {
       padding: 0.75rem 1rem;
       border-bottom: 1px solid var(--gray-100);
     }
